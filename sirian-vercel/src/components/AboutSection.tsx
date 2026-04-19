@@ -18,12 +18,12 @@ export default function AboutSection({ lang }: AboutSectionProps) {
   const bio = content["about_bio"] || (isAr
     ? "أنا مطور ويب شغوف ومتخصص في الأمن السيبراني. أؤمن بأن التكنولوجيا يجب أن تكون جميلة وآمنة ومؤثرة."
     : "I'm a passionate web developer and cybersecurity specialist who believes technology should be beautiful, secure, and impactful.");
-  const name = content["about_name"] || "Adam";
+  const name = content["about_name"] || "Adem";
   const location = content["about_location"] || (isAr ? "الجزائر" : "Algeria");
   const email = content["about_email"] || "hello@adam.dev";
   const status = content["about_status"] || (isAr ? "متاح" : "Available");
-  const statYears = content["stat_years"] || "3+";
-  const statProjects = content["stat_projects"] || "50+";
+  const statYears = content["stat_years"] || "+1";
+  const statProjects = content["stat_projects"] || "10+";
 
   const skills = [
     { name: content["skill_1_name"] || "React / Next.js", level: parseInt(content["skill_1_level"] || "90") },
