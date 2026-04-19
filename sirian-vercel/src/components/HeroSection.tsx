@@ -178,7 +178,7 @@ export default function HeroSection({ lang, onNav }: HeroSectionProps) {
                   src={profileImg}
                   alt={name}
                   className="w-full h-full object-cover"
-                  style={{ transform: "scale(1.05)" }} // زوم خفيف جداً للحواف
+                  style={{objectPosition: "center 10%", transform: "scale(1.15)"}}
                 />
               ) : (
                 <div className="w-full h-full flex items-center justify-center bg-zinc-900">
