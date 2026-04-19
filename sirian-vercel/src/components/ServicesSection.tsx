@@ -72,7 +72,7 @@ const services = [
         <circle cx="20" cy="20" r="3" fill="#f97316"/>
       </svg>
     ),
-    en: { title: "My creativity has crossed its red lines", desc: "I write deep psychological novels and creative content that delves into complex human emotions, such as my current project "Kineopsia"." },
+    en: { title: "My creativity has crossed its red lines", desc: "I write deep psychological novels and creative content that delves into complex human emotions, such as my current project Kineopsia" },
     ar: { title: "ابداعي تخطى حدوده الحمراء", desc:" أكتب روايات نفسية عميقة ومحتوى إبداعي يغوص في المشاعر الإنسانية المعقدة، مثل مشروعي الحالي كينوبسيا" },
   },
 ];
