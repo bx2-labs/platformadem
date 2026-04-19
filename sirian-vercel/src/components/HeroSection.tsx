@@ -17,7 +17,7 @@ export default function HeroSection({ lang, onNav }: HeroSectionProps) {
   }, []);
 
   const greeting = content["hero_greeting"] || (isAr ? "مرحباً، أنا" : "Hi, I'm");
-  const name = content["hero_name"] || "Adam";
+  const name = content["hero_name"] || "Adem";
   const subtitle = content["hero_subtitle"] || (isAr ? "مطور ويب ومتحمس للأمن السيبراني" : "Web Developer & Cybersecurity Enthusiast");
   const description = content["hero_description"] || (isAr ? "أبني تجارب رقمية تجمع بين الجمال والأداء والأمان." : "I craft digital experiences where beauty meets performance and security.");
   const profileImg = content["profile_image_url"];
