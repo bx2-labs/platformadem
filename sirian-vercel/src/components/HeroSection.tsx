@@ -167,10 +167,10 @@ export default function HeroSection({ lang, onNav }: HeroSectionProps) {
             <div
               className="relative z-10 overflow-hidden"
               style={{
-                width: 320,
-                height: 320,
+                width: 380,
+                height: 380,
                 // استخدام الـ path بنسبة مئوية أو إحداثيات مدروسة ليتوسط الصورة
-                clipPath: "path('M160,32 C213,21 288,64 298,128 C309,192 266,266 202,288 C138,309 64,277 42,213 C21,149 53,74 106,48 C128,38 138,34 160,32 Z')",
+                clipPath: "path('M190,38 C253,25 342,76 354,152 C367,228 316,316 240,342 C164,367 76,329 50,253 C25,177 63,88 126,57 C152,45 164,40 190,38 Z')",
               }}
             >
               {profileImg ? (
@@ -181,7 +181,7 @@ export default function HeroSection({ lang, onNav }: HeroSectionProps) {
   style={{ 
     // center 10% للكمبيوتر و center 5% للهاتف لضمان عدم ضياع ملامح الوجه
     objectPosition: "center 10%",
-    transform: "scale(1.25)",
+    transform: "scale(1.35)",
     width: "100%",
     height: "100%"
   }}
