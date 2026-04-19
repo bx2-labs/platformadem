@@ -21,8 +21,8 @@ export default function HeroSection({ lang, onNav }: HeroSectionProps) {
   const subtitle = content["hero_subtitle"] || (isAr ? "مطور ويب ومتحمس للأمن السيبراني" : "Web Developer & Cybersecurity Enthusiast");
   const description = content["hero_description"] || (isAr ? "أبني تجارب رقمية تجمع بين الجمال والأداء والأمان." : "I craft digital experiences where beauty meets performance and security.");
   const profileImg = content["profile_image_url"];
-  const statYears = content["stat_years"] || "3+";
-  const statProjects = content["stat_projects"] || "50+";
+  const statYears = content["stat_years"] || "+1";
+  const statProjects = content["stat_projects"] || "10+";
   const statSatisfaction = content["stat_satisfaction"] || "100%";
 
   return (
