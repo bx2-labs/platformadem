@@ -178,7 +178,9 @@ export default function HeroSection({ lang, onNav }: HeroSectionProps) {
                   src={profileImg}
                   alt={name}
                   className="w-full h-full object-cover"
-                  style={{objectPosition: "center 10%", transform: "scale(1.15)"}}
+                  style={{objectPosition:window.innerWidth < 768 ? "center 5%" : "center 15%", 
+    transform: "scale(1.15)" 
+  }}
                 />
               ) : (
                 <div className="w-full h-full flex items-center justify-center bg-zinc-900">
