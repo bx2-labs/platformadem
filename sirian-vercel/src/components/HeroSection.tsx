@@ -175,13 +175,17 @@ export default function HeroSection({ lang, onNav }: HeroSectionProps) {
             >
               {profileImg ? (
                 <img
-                  src={profileImg}
-                  alt={name}
-                  className="w-full h-full object-cover"
-                  style={{objectPosition:window.innerWidth < 768 ? "center 5%" : "center 15%", 
-    transform: "scale(1.15)" 
+  src={profileImg}
+  alt={name}
+  className="w-full h-full object-cover"
+  style={{ 
+    // center 10% للكمبيوتر و center 5% للهاتف لضمان عدم ضياع ملامح الوجه
+    objectPosition: "center 10%",
+    transform: "scale(1.25)",
+    width: "100%",
+    height: "100%"
   }}
-                />
+/> 
               ) : (
                 <div className="w-full h-full flex items-center justify-center bg-zinc-900">
                    <span className="text-orange-500">No Image</span>
