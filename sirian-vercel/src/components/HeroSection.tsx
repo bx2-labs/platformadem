@@ -129,26 +129,27 @@ export default function HeroSection({ lang, onNav }: HeroSectionProps) {
           </motion.div>
         </div>
 
-        {/* Right — Profile image blob (التعديل الجديد هنا) */}
+        {/* Right — Profile image blob (Fixed & Centered) */}
         <motion.div
           initial={{ opacity: 0, scale: 0.85 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, delay: 0.3 }}
           className="flex-shrink-0 flex items-center justify-center relative"
         >
-          {/* Outer glow ring - حجم أكبر للتوازن */}
+          {/* Outer glow ring */}
           <div
             className="absolute rounded-full"
             style={{
-              width: 450,
-              height: 450,
-              background: "radial-gradient(circle, rgba(249,115,22,0.12) 0%, transparent 70%)",
-              filter: "blur(25px)",
+              width: 480,
+              height: 480,
+              background: "radial-gradient(circle, rgba(249,115,22,0.15) 0%, transparent 70%)",
+              filter: "blur(30px)",
             }}
           />
 
-          <div className="relative flex items-center justify-center" style={{ width: 400, height: 400 }}>
-            <svg viewBox="0 0 300 300" className="absolute inset-0 w-full h-full">
+          <div className="relative flex items-center justify-center" style={{ width: 420, height: 420 }}>
+            {/* الخلفية الملونة للـ Blob */}
+            <svg viewBox="0 0 300 300" className="absolute inset-0 w-full h-full scale-110">
               <defs>
                 <linearGradient id="blobGrad" x1="0%" y1="0%" x2="100%" y2="100%">
                   <stop offset="0%" stopColor="#f97316" stopOpacity="0.9" />
@@ -159,17 +160,17 @@ export default function HeroSection({ lang, onNav }: HeroSectionProps) {
               <path
                 d="M150,30 C200,20 270,60 280,120 C290,180 250,250 190,270 C130,290 60,260 40,200 C20,140 50,70 100,45 C120,36 130,32 150,30 Z"
                 fill="url(#blobGrad)"
-                opacity="0.85"
               />
             </svg>
 
-            {/* Profile image - الإطار مكبر لـ 300 بيكسل لإبراز ملامح الوجه */}
+            {/* الإطار الحاوي للصورة - تم تحسين الـ clipPath ليتوسط تماماً */}
             <div
-              className="relative z-10 flex items-center justify-center overflow-hidden"
+              className="relative z-10 overflow-hidden"
               style={{
-                width: 300,
-                height: 300,
-                clipPath: "path('M150,30 C200,20 270,60 280,120 C290,180 250,250 190,270 C130,290 60,260 40,200 C20,140 50,70 100,45 C120,36 130,32 150,30 Z')",
+                width: 320,
+                height: 320,
+                // استخدام الـ path بنسبة مئوية أو إحداثيات مدروسة ليتوسط الصورة
+                clipPath: "path('M160,32 C213,21 288,64 298,128 C309,192 266,266 202,288 C138,309 64,277 42,213 C21,149 53,74 106,48 C128,38 138,34 160,32 Z')",
               }}
             >
               {profileImg ? (
@@ -177,30 +178,28 @@ export default function HeroSection({ lang, onNav }: HeroSectionProps) {
                   src={profileImg}
                   alt={name}
                   className="w-full h-full object-cover"
+                  style={{ transform: "scale(1.05)" }} // زوم خفيف جداً للحواف
                 />
               ) : (
-                <div className="w-full h-full flex items-center justify-center" style={{ background: "rgba(0,0,0,0.35)" }}>
-                   <svg viewBox="0 0 80 80" width="90" height="90" fill="none">
-                    <circle cx="40" cy="28" r="18" fill="rgba(249,115,22,0.5)" />
-                    <path d="M10 75 C10 55 70 55 70 75" fill="rgba(249,115,22,0.4)" />
-                  </svg>
+                <div className="w-full h-full flex items-center justify-center bg-zinc-900">
+                   <span className="text-orange-500">No Image</span>
                 </div>
               )}
             </div>
 
             {/* Floating badge */}
             <motion.div
-              animate={{ y: [0, -8, 0] }}
-              transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -bottom-2 -right-2 px-5 py-4 rounded-xl"
+              animate={{ y: [0, -10, 0] }}
+              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+              className="absolute bottom-4 right-4 px-5 py-4 rounded-2xl"
               style={{
                 background: "#f97316",
-                boxShadow: "0 0 30px rgba(249,115,22,0.6)",
-                zIndex: 10,
+                boxShadow: "0 10px 40px rgba(249,115,22,0.5)",
+                zIndex: 20,
               }}
             >
-              <p className="text-white font-black text-xl leading-none" style={{ fontFamily: "'Poppins', sans-serif" }}>{statYears}</p>
-              <p className="text-white/80 text-xs font-medium" style={{ fontFamily: "'Poppins', sans-serif" }}>{isAr ? "سنوات" : "Years Exp."}</p>
+              <p className="text-white font-black text-2xl leading-none" style={{ fontFamily: "'Poppins', sans-serif" }}>{statYears}</p>
+              <p className="text-white/90 text-xs font-bold uppercase tracking-wider" style={{ fontFamily: "'Poppins', sans-serif" }}>{isAr ? "خبرة" : "Years Exp."}</p>
             </motion.div>
           </div>
         </motion.div>
@@ -213,14 +212,14 @@ export default function HeroSection({ lang, onNav }: HeroSectionProps) {
         transition={{ delay: 1.5 }}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
       >
-        <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 1.5, repeat: Infinity }}
-          className="w-5 h-8 rounded-full border-2 flex items-start justify-center pt-1"
-          style={{ borderColor: "rgba(249,115,22,0.4)" }}
-        >
-          <div className="w-1 h-2 rounded-full" style={{ background: "#f97316" }} />
-        </motion.div>
+        <div className="w-5 h-8 rounded-full border-2 flex items-start justify-center pt-1" style={{ borderColor: "rgba(249,115,22,0.4)" }}>
+          <motion.div 
+            animate={{ y: [0, 10, 0] }} 
+            transition={{ duration: 1.5, repeat: Infinity }}
+            className="w-1 h-2 rounded-full" 
+            style={{ background: "#f97316" }} 
+          />
+        </div>
       </motion.div>
     </section>
   );
