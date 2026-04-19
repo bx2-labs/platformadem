@@ -129,29 +129,25 @@ export default function HeroSection({ lang, onNav }: HeroSectionProps) {
           </motion.div>
         </div>
 
-        {/* Right — Profile image blob */}
+        {/* Right — Profile image blob (التعديل الجديد هنا) */}
         <motion.div
           initial={{ opacity: 0, scale: 0.85 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, delay: 0.3 }}
           className="flex-shrink-0 flex items-center justify-center relative"
         >
-          {/* Outer glow ring */}
+          {/* Outer glow ring - حجم أكبر للتوازن */}
           <div
             className="absolute rounded-full"
             style={{
-              width: 380,
-              height: 380,
+              width: 450,
+              height: 450,
               background: "radial-gradient(circle, rgba(249,115,22,0.12) 0%, transparent 70%)",
-              filter: "blur(20px)",
+              filter: "blur(25px)",
             }}
           />
 
-          {/* Blob shape with clip */}
-          <div
-            className="relative flex items-center justify-center"
-            style={{ width: 320, height: 320 }}
-          >
+          <div className="relative flex items-center justify-center" style={{ width: 400, height: 400 }}>
             <svg viewBox="0 0 300 300" className="absolute inset-0 w-full h-full">
               <defs>
                 <linearGradient id="blobGrad" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -159,9 +155,6 @@ export default function HeroSection({ lang, onNav }: HeroSectionProps) {
                   <stop offset="60%" stopColor="#f59e0b" stopOpacity="0.7" />
                   <stop offset="100%" stopColor="#ea580c" stopOpacity="0.5" />
                 </linearGradient>
-                <clipPath id="blobClip">
-                  <path d="M150,30 C200,20 270,60 280,120 C290,180 250,250 190,270 C130,290 60,260 40,200 C20,140 50,70 100,45 C120,36 130,32 150,30 Z" />
-                </clipPath>
               </defs>
               <path
                 d="M150,30 C200,20 270,60 280,120 C290,180 250,250 190,270 C130,290 60,260 40,200 C20,140 50,70 100,45 C120,36 130,32 150,30 Z"
@@ -170,14 +163,13 @@ export default function HeroSection({ lang, onNav }: HeroSectionProps) {
               />
             </svg>
 
-            {/* Profile image or placeholder */}
+            {/* Profile image - الإطار مكبر لـ 300 بيكسل لإبراز ملامح الوجه */}
             <div
               className="relative z-10 flex items-center justify-center overflow-hidden"
               style={{
-                width: 240,
-                height: 240,
+                width: 300,
+                height: 300,
                 clipPath: "path('M150,30 C200,20 270,60 280,120 C290,180 250,250 190,270 C130,290 60,260 40,200 C20,140 50,70 100,45 C120,36 130,32 150,30 Z')",
-                transform: "scale(0.75) translateY(-10px)",
               }}
             >
               {profileImg ? (
@@ -185,14 +177,10 @@ export default function HeroSection({ lang, onNav }: HeroSectionProps) {
                   src={profileImg}
                   alt={name}
                   className="w-full h-full object-cover"
-                  style={{ transform: "scale(1.2)" }}
                 />
               ) : (
-                <div
-                  className="w-full h-full flex items-center justify-center"
-                  style={{ background: "rgba(0,0,0,0.35)" }}
-                >
-                  <svg viewBox="0 0 80 80" width="90" height="90" fill="none">
+                <div className="w-full h-full flex items-center justify-center" style={{ background: "rgba(0,0,0,0.35)" }}>
+                   <svg viewBox="0 0 80 80" width="90" height="90" fill="none">
                     <circle cx="40" cy="28" r="18" fill="rgba(249,115,22,0.5)" />
                     <path d="M10 75 C10 55 70 55 70 75" fill="rgba(249,115,22,0.4)" />
                   </svg>
@@ -204,14 +192,14 @@ export default function HeroSection({ lang, onNav }: HeroSectionProps) {
             <motion.div
               animate={{ y: [0, -8, 0] }}
               transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -bottom-4 -right-4 px-4 py-3 rounded-xl"
+              className="absolute -bottom-2 -right-2 px-5 py-4 rounded-xl"
               style={{
                 background: "#f97316",
                 boxShadow: "0 0 30px rgba(249,115,22,0.6)",
                 zIndex: 10,
               }}
             >
-              <p className="text-white font-black text-lg leading-none" style={{ fontFamily: "'Poppins', sans-serif" }}>{statYears}</p>
+              <p className="text-white font-black text-xl leading-none" style={{ fontFamily: "'Poppins', sans-serif" }}>{statYears}</p>
               <p className="text-white/80 text-xs font-medium" style={{ fontFamily: "'Poppins', sans-serif" }}>{isAr ? "سنوات" : "Years Exp."}</p>
             </motion.div>
           </div>
