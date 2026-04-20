@@ -78,7 +78,7 @@ function MainApp() {
       {/* Footer */}
       <footer className="relative z-10 py-8 text-center border-t" style={{ borderColor: "rgba(255,255,255,0.05)" }}>
         <p className="text-gray-700 text-xs" style={{ fontFamily: "'Poppins', sans-serif" }}>
-          {isAr ? "© 2025 آدم — جميع الحقوق محفوظة" : "© 2025 Adam — All Rights Reserved"}
+          {isAr ? "© 2026 آدم — جميع الحقوق محفوظة" : "© 2026 Adem — All Rights Reserved"}
         </p>
       </footer>
     </div>
