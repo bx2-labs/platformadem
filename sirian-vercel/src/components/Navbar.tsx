@@ -46,7 +46,7 @@ export default function Navbar({ lang, onToggleLang, onNav }: NavbarProps) {
           className="text-xl font-bold text-white hover:text-orange-400 transition-colors duration-300"
           style={{ fontFamily: "'Poppins', sans-serif", letterSpacing: "0.02em" }}
         >
-          Adam<span style={{ color: "#f97316" }}>.</span>
+          Adem<span style={{ color: "#f97316" }}>.</span>
         </button>
 
         <div className="hidden md:flex items-center gap-8">
